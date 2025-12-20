@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://beskof5wn247v"]
+
+[ext_resource type="Texture2D" uid="uid://d3hsph8vqpb3f" path="res://Assets/shapes.png" id="1_dktr3"]
+
+[node name="Shape Sprites" type="Sprite2D"]
+modulate = Color(0.11764706, 0.53333336, 0.8980392, 1)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_dktr3")
+hframes = 6

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://wluqd4xiy081"]
+
+[ext_resource type="Texture2D" uid="uid://gvlhp3owq0rs" path="res://Assets/oulined_shapes.png" id="1_jcgup"]
+
+[node name="Shape Sprites" type="Sprite2D"]
+modulate = Color(0.11764706, 0.53333336, 0.8980392, 1)
+texture_filter = 1
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_jcgup")
+hframes = 6
