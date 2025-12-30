@@ -1,14 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwtbyhcibftke"]
+[gd_scene load_steps=3 format=3 uid="uid://bkhfva50dbdew"]
 
-[ext_resource type="PackedScene" uid="uid://oorgdakvlffk" path="res://Damage/damage_area.tscn" id="1_qv633"]
+[ext_resource type="PackedScene" uid="uid://lxcrdbrvvvev" path="res://Damage/moving_damage.tscn" id="1_qv633"]
 [ext_resource type="Script" uid="uid://gvvt68mja546" path="res://Damage/boomerang_damage.gd" id="1_y85c2"]
 
-[node name="Boomerang Damage" type="Node2D"]
+[node name="Boomerang Damage" type="Node2D" node_paths=PackedStringArray("damage_area", "target_location")]
 script = ExtResource("1_y85c2")
+damage_area = NodePath("Moving Damage")
+target_location = NodePath("Target")
 
-[node name="Damage Area" parent="." instance=ExtResource("1_qv633")]
+[node name="Moving Damage" parent="." instance=ExtResource("1_qv633")]
 
-[node name="Start" type="Marker2D" parent="."]
-
-[node name="End" type="Marker2D" parent="."]
-position = Vector2(128, 0)
+[node name="Target" type="Marker2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(64, 0)

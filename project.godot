@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Dodge and Collect Shapes"
-run/main_scene="uid://cihkbknv77nmd"
+run/main_scene="uid://d3urw428w3qyg"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
