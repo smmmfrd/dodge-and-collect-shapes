@@ -19,6 +19,9 @@ func start_new_game() -> void:
 func set_level_holder(holder: LevelHolder) -> void:
 	level_holder = holder
 
+func set_player_spawn(spawn: PlayerSpawn) -> void:
+	player_spawn = spawn
+
 func finish_zone_entered() -> void:
 	if not level_completed():
 		return
@@ -44,8 +47,10 @@ func start_next_level() -> void:
 	
 	print("All levels completed.")
 
-func new_player_spawn(spawn: PlayerSpawn) -> void:
-	player_spawn = spawn
+func begin_level() -> void:
+	await get_tree().create_timer(0.5).timeout
+	
+	player_spawn.spawn_player()
 
 #region Collectables
 func reset_collectables() -> void:
@@ -68,4 +73,22 @@ func level_completed() -> bool:
 
 func clear_level_data() -> void:
 	player_spawn = null
+#endregion
+
+#region Reset Level
+
+func player_collided(player : Node2D) -> void:
+	if not player.is_in_group("Player"):
+		return
+	
+	print("Player hit something, starting them over.")
+	player.queue_free()
+	# TODO: Player death feedback.
+	
+	# Wait a bit...
+	await get_tree().create_timer(0.5).timeout
+	
+	# Begin level again.
+	begin_level()
+
 #endregion

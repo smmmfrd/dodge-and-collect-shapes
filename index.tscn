@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3urw428w3qyg"]
+[gd_scene load_steps=4 format=3 uid="uid://d3urw428w3qyg"]
 
 [ext_resource type="Script" uid="uid://dlim1mypb23q7" path="res://level_holder.gd" id="1_2gn6w"]
 [ext_resource type="PackedScene" uid="uid://doecjw10xo06f" path="res://Levels/level_2.tscn" id="2_2gn6w"]
+[ext_resource type="PackedScene" uid="uid://o254v1dnafw1" path="res://Levels/level_1.tscn" id="2_mbj17"]
 
 [node name="Game Manager" type="Node"]
 
@@ -10,4 +11,4 @@ unique_name_in_owner = true
 
 [node name="Level Holder" type="Node2D" parent="."]
 script = ExtResource("1_2gn6w")
-levels = Array[PackedScene]([ExtResource("2_2gn6w")])
+levels = Array[PackedScene]([ExtResource("2_mbj17"), ExtResource("2_2gn6w")])

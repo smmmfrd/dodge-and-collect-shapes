@@ -5,7 +5,7 @@ extends Marker2D
 
 
 func _ready() -> void:
-	LevelManager.new_player_spawn(self)
+	LevelManager.set_player_spawn(self)
 
 func spawn_player() -> void:
 	var player : Node2D = player_scene.instantiate()

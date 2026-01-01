@@ -14,15 +14,17 @@ func next_level() -> bool:
 	print("Loading Level " + str(current_level_index) + ".")
 	# Destroy old level
 	for n in self.get_children():
-		self.remove_child(n)
+		#self.remove_child(n)
+		call_deferred("remove_child", n)
 		n.queue_free()
 	
 	# Instantiate next level
 	var temp : Node2D = levels[current_level_index].instantiate()
 	temp.global_position = self.global_position
-	self.add_child(temp)
+	#self.add_child()
+	call_deferred("add_child", temp)
 	
-	# TODO
-	# Let level manager know we are done (for animations)
+	# Let manager know we are done.
+	LevelManager.begin_level()
 	
 	return false
