@@ -1,5 +1,7 @@
 extends Node
 
+var game_manager : GameManager
+
 var level_holder : LevelHolder
 
 var player_spawn : PlayerSpawn = null
@@ -7,12 +9,14 @@ var player_spawn : PlayerSpawn = null
 var coll_count := 0
 var collected_count := 0
 
-func _ready() -> void:
-	get_tree().create_timer(0.5).timeout.connect(start_new_game)
-
+func set_game_manager(manager: GameManager) -> void:
+	game_manager = manager
 
 func start_new_game() -> void:
 	print("Starting new game")
+	# Clear out all old game data!
+	level_holder.current_level_index = -1
+	
 	start_next_level()
 
 
@@ -46,6 +50,7 @@ func start_next_level() -> void:
 		return
 	
 	print("All levels completed.")
+	game_manager.all_levels_completed()
 
 func begin_level() -> void:
 	await get_tree().create_timer(0.5).timeout

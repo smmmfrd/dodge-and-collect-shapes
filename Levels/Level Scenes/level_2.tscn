@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=4 uid="uid://doecjw10xo06f"]
 
-[ext_resource type="Script" uid="uid://dc1bmjeu2073o" path="res://level.gd" id="1_bcgyv"]
+[ext_resource type="Script" uid="uid://dc1bmjeu2073o" path="res://Levels/level.gd" id="1_bcgyv"]
 [ext_resource type="PackedScene" uid="uid://c63t7c156cjrd" path="res://Player/player_spawn.tscn" id="2_fbld2"]
 [ext_resource type="PackedScene" uid="uid://br38htnyqukg2" path="res://walls.tscn" id="3_s275v"]
-[ext_resource type="PackedScene" uid="uid://bgyjfbyenmo6" path="res://collect.tscn" id="4_pml6m"]
-[ext_resource type="PackedScene" uid="uid://bygmdvgn6hvx3" path="res://finish_zone.tscn" id="5_vltsr"]
+[ext_resource type="PackedScene" uid="uid://bgyjfbyenmo6" path="res://Entities/collect.tscn" id="4_pml6m"]
+[ext_resource type="PackedScene" uid="uid://bygmdvgn6hvx3" path="res://Entities/finish_zone.tscn" id="5_vltsr"]
 [ext_resource type="PackedScene" uid="uid://bkhfva50dbdew" path="res://Damage/boomerang_damage.tscn" id="6_s275v"]
 
 [node name="Base Level" type="Node2D"]

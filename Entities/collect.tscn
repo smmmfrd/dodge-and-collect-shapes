@@ -1,10 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgyjfbyenmo6"]
 
 [ext_resource type="PackedScene" uid="uid://beskof5wn247v" path="res://Assets/shape_sprite.tscn" id="1_5gp5l"]
-[ext_resource type="Script" uid="uid://okjvbcfjfcrg" path="res://collect.gd" id="1_d1qwf"]
+[ext_resource type="Script" uid="uid://okjvbcfjfcrg" path="res://Entities/collect.gd" id="1_d1qwf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5gp5l"]
-radius = 8.0
 
 [node name="Collect" type="Area2D"]
 collision_layer = 8

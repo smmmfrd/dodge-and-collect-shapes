@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=4 uid="uid://o254v1dnafw1"]
 
-[ext_resource type="Script" uid="uid://dc1bmjeu2073o" path="res://level.gd" id="1_rfktq"]
+[ext_resource type="Script" uid="uid://dc1bmjeu2073o" path="res://Levels/level.gd" id="1_rfktq"]
 [ext_resource type="PackedScene" uid="uid://br38htnyqukg2" path="res://walls.tscn" id="3_77x7w"]
 [ext_resource type="PackedScene" uid="uid://oorgdakvlffk" path="res://Damage/damage_area.tscn" id="4_xoyoh"]
-[ext_resource type="PackedScene" uid="uid://bgyjfbyenmo6" path="res://collect.tscn" id="5_f4pg2"]
-[ext_resource type="PackedScene" uid="uid://bygmdvgn6hvx3" path="res://finish_zone.tscn" id="6_62b6n"]
+[ext_resource type="PackedScene" uid="uid://bgyjfbyenmo6" path="res://Entities/collect.tscn" id="5_f4pg2"]
+[ext_resource type="PackedScene" uid="uid://bygmdvgn6hvx3" path="res://Entities/finish_zone.tscn" id="6_62b6n"]
 [ext_resource type="PackedScene" uid="uid://c63t7c156cjrd" path="res://Player/player_spawn.tscn" id="6_rfktq"]
 
 [node name="Level 1" type="Node2D"]
