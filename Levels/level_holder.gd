@@ -7,14 +7,17 @@ var current_level_index := -1
 func _ready() -> void:
 	LevelManager.set_level_holder(self)
 
-func next_level() -> bool:
+func reset() -> void:
+	current_level_index = -1
+
+func next_level() -> void:
 	# Destroy old level
-	clear_old_level()
+	clear_old_level(self)
 	
 	current_level_index += 1
 	if current_level_index >= len(levels):
-		return true
-	print("Loading Level " + str(current_level_index) + ".")
+		return
+	#print("Loading Level " + str(current_level_index) + ".")
 	
 	# Instantiate next level
 	var temp : Node2D = levels[current_level_index].instantiate()
@@ -24,11 +27,10 @@ func next_level() -> bool:
 	
 	# Let manager know we are done.
 	LevelManager.begin_level()
-	
-	return false
 
-func clear_old_level() -> void:
-	for n in self.get_children():
-		#self.remove_child(n)
-		call_deferred("remove_child", n)
+func levels_complete() -> bool:
+	return current_level_index == len(levels) - 1
+
+func clear_old_level(level: Node) -> void:
+	for n in level.get_children():
 		n.queue_free()

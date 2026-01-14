@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3urw428w3qyg"]
+[gd_scene load_steps=11 format=3 uid="uid://d3urw428w3qyg"]
 
 [ext_resource type="Script" uid="uid://dlim1mypb23q7" path="res://Levels/level_holder.gd" id="1_2gn6w"]
 [ext_resource type="Script" uid="uid://b0u6k84qvfjr6" path="res://game_manager.gd" id="1_ir7so"]
 [ext_resource type="PackedScene" uid="uid://doecjw10xo06f" path="res://Levels/Level Scenes/level_2.tscn" id="2_2gn6w"]
 [ext_resource type="PackedScene" uid="uid://o254v1dnafw1" path="res://Levels/Level Scenes/level_1.tscn" id="2_mbj17"]
 [ext_resource type="Texture2D" uid="uid://dnc5qnbeql5u" path="res://Assets/Kenney/kenney_ui-pack/Vector/Red/button_square_depth_border.svg" id="4_3bfj3"]
+[ext_resource type="Texture2D" uid="uid://dy8cojxrfogvw" path="res://Assets/Kenney/kenney_ui-pack/Vector/Grey/button_square_depth_border.svg" id="5_2fy20"]
+[ext_resource type="Texture2D" uid="uid://cjl27toclqjwb" path="res://Assets/Kenney/kenney_game-icons/PNG/Black/1x/pause.png" id="6_2fy20"]
+[ext_resource type="Script" uid="uid://dir415ygs4x4p" path="res://loading_screen.gd" id="8_mvkpm"]
 
 [sub_resource type="Theme" id="Theme_fyqef"]
 
@@ -21,6 +24,50 @@ script = ExtResource("1_2gn6w")
 levels = Array[PackedScene]([ExtResource("2_mbj17"), ExtResource("2_2gn6w")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Gameplay UI" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Gameplay" type="PanelContainer" parent="CanvasLayer/Gameplay UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_right = 25.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="BackGround" type="NinePatchRect" parent="CanvasLayer/Gameplay UI/Gameplay"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("5_2fy20")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Gameplay UI/Gameplay"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer"]
+layout_mode = 2
+
+[node name="Pause Button" type="TextureButton" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("6_2fy20")
 
 [node name="UI" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -43,10 +90,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -45.0
-offset_right = 48.0
-offset_bottom = 45.0
+offset_left = -103.0
+offset_top = -79.5
+offset_right = 103.0
+offset_bottom = 79.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -94,17 +141,16 @@ text = "Exit"
 
 [node name="Game Over" type="PanelContainer" parent="CanvasLayer/UI"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -45.0
-offset_right = 48.0
-offset_bottom = 45.0
+offset_left = -103.0
+offset_top = -79.5
+offset_right = 103.0
+offset_bottom = 79.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -149,6 +195,25 @@ text = "New Game"
 [node name="Close Button" type="Button" parent="CanvasLayer/UI/Game Over/MarginContainer/VBoxContainer/Button Container"]
 layout_mode = 2
 text = "Exit"
+
+[node name="Loading Screen" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_mvkpm")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Loading Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.3019608, 0.2509804, 1)
 
 [connection signal="pressed" from="CanvasLayer/UI/Main Menu/MarginContainer/VBoxContainer/Button Container/Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Main Menu/MarginContainer/VBoxContainer/Button Container/Close Button" to="." method="_on_close_button_pressed"]

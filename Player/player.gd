@@ -6,6 +6,9 @@ const ACCEL = 15.0
 const FRICTION = 20.0
 
 func _physics_process(delta: float) -> void:
+	if LevelManager.paused:
+		return
+	
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var target_velocity = direction * SPEED
 	
