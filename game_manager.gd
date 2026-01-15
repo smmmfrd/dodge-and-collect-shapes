@@ -48,7 +48,8 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_close_button_pressed() -> void:
-	print("End the game")
+	#print("End the game")
+	get_tree().quit()
 
 
 func _on_pause_button_pressed() -> void:
