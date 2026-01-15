@@ -16,6 +16,4 @@ func go_to(delta: float, location: Vector2) -> void:
 	damage_area.global_position = damage_velocity
 	
 	if damage_area.global_position.distance_to(location) == 0:
-		# TODO
-		# Option: have it hang out for a little bit
 		heading_out = not heading_out

@@ -1,8 +1,6 @@
 class_name GameManager
 extends Node
 
-# TODO: Loading, Level Complete
-
 @onready var ui: Control = %UI
 
 @onready var main_menu: PanelContainer = %"Main Menu"
@@ -20,7 +18,6 @@ func _ready() -> void:
 	open_menu(main_menu)
 	
 	# Half a second wait on boot for splash screen
-	# TODO - splash screen
 	await get_tree().create_timer(0.5).timeout
 	
 	await hide_loading_screen()

@@ -34,7 +34,7 @@ func finish_zone_entered() -> void:
 
 func start_next_level() -> void:
 	#print("Level is finished, transitioning to next.")
-	# TODO - Complete level animation
+	# Complete level animation
 	
 	# Clear current level data
 	reset_collectables()
@@ -100,7 +100,7 @@ func player_collided(player : Node2D) -> void:
 	
 	print("Player hit something, starting them over.")
 	player.queue_free()
-	# TODO: Player death feedback.
+	# Player death feedback.
 	
 	# Wait a bit...
 	await get_tree().create_timer(0.5).timeout
