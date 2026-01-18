@@ -236,6 +236,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.3019608, 0.2509804, 1)
 
+[connection signal="pressed" from="CanvasLayer/Gameplay UI/Gameplay/MarginContainer/HBoxContainer/Pause Button" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Main Menu/MarginContainer/VBoxContainer/Button Container/Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Main Menu/MarginContainer/VBoxContainer/Button Container/Close Button" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Game Over/MarginContainer/VBoxContainer/Button Container/New Game Button" to="." method="_on_start_button_pressed"]
