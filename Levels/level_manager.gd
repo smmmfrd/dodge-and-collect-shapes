@@ -48,14 +48,14 @@ func start_next_level() -> void:
 		return
 	
 	# Loading screen
-	await game_manager.show_loading_screen()
+	await game_manager.next_level_pressed()
 	
 	# Load next level
 	level_holder.next_level()
 
-func begin_level() -> void:
+func begin_level(level_name: String) -> void:
 	# Let the UI update
-	await game_manager.level_started()
+	await game_manager.level_started(level_name, coll_count)
 	
 	#await get_tree().create_timer(0.5).timeout
 	
@@ -79,7 +79,11 @@ func add_collectable() -> void:
 
 func collectable_collected() -> void:
 	collected_count += 1
-	if collected_count != coll_count:
+	var all_collected = collected_count != coll_count
+	
+	game_manager.update_collected_amount(collected_count, all_collected)
+	
+	if all_collected:
 		return
 	
 	print("All collectables collected.")
@@ -105,7 +109,7 @@ func player_collided(player : Node2D) -> void:
 	# Wait a bit...
 	await get_tree().create_timer(0.5).timeout
 	
-	# Begin level again.
-	begin_level()
+	# Reset player position.
+	player_spawn.spawn_player()
 
 #endregion

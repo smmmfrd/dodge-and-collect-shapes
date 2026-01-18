@@ -6,7 +6,7 @@ extends Node
 @onready var main_menu: PanelContainer = %"Main Menu"
 @onready var game_over: PanelContainer = %"Game Over"
 
-@onready var gameplay_ui: Control = %"Gameplay UI"
+@onready var gameplay_ui: GameplayUI = %"Gameplay UI"
 @onready var loading_screen: LoadingScreen = %"Loading Screen"
 
 func _ready() -> void:
@@ -14,13 +14,14 @@ func _ready() -> void:
 	LevelManager.set_game_manager(self)
 	
 	gameplay_ui.visible = false
+	loading_screen.visible = true
 	
 	open_menu(main_menu)
 	
 	# Half a second wait on boot for splash screen
 	await get_tree().create_timer(0.5).timeout
 	
-	await hide_loading_screen()
+	await _hide_loading_screen()
 
 func open_menu(menu : Control = null) -> void:
 	for child in ui.get_children():
@@ -38,7 +39,7 @@ func all_levels_completed() -> void:
 	open_menu(game_over)
 
 func _on_start_button_pressed() -> void:
-	await show_loading_screen()
+	await _show_loading_screen()
 	
 	open_menu()
 	LevelManager.start_new_game()
@@ -53,18 +54,25 @@ func _on_pause_button_pressed() -> void:
 	#print("pausing")
 	LevelManager.toggle_paused()
 
-func level_started() -> void:
+func level_started(level_name: String, max_collects: int) -> void:
 	# The level has begun.
 	# Gameplay UI
 	gameplay_ui.visible = true
+	gameplay_ui.level_stats(level_name, max_collects)
 	
-	await hide_loading_screen()
+	await _hide_loading_screen()
 	pass
 
-func show_loading_screen() -> void:
+func next_level_pressed() -> void:
+	await _show_loading_screen()
+
+func _show_loading_screen() -> void:
 	loading_screen.visible = true
 	await loading_screen.show_transition()
 
-func hide_loading_screen() -> void:
+func _hide_loading_screen() -> void:
 	await loading_screen.hide_transition()
 	loading_screen.visible = false
+
+func update_collected_amount(amount: int, all_collected: bool) -> void:
+	gameplay_ui.collected_amount_update(amount, all_collected)

@@ -25,8 +25,11 @@ func next_level() -> void:
 	#self.add_child()
 	call_deferred("add_child", temp)
 	
+	# Wait a frame for the level data to be scraped
+	await get_tree().process_frame
+	
 	# Let manager know we are done.
-	LevelManager.begin_level()
+	LevelManager.begin_level(temp.name)
 
 func levels_complete() -> bool:
 	return current_level_index == len(levels) - 1

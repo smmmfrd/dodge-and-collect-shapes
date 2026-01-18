@@ -1,13 +1,13 @@
 TODO:
 
-Complete level animation.
-
-Splash Screen.
-
 Gameplay UI reqs:
 	Level Title
 	Collectables {Collected} / {Total}
 	See juice
+
+Complete level animation.
+
+Splash Screen.
 
 ----- JUICE -----
 Player spawn feedback.
