@@ -90,7 +90,6 @@ texture_normal = ExtResource("6_2fy20")
 
 [node name="UI" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -218,7 +217,6 @@ text = "Exit"
 
 [node name="Loading Screen" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -235,6 +233,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.3019608, 0.2509804, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Loading Screen"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -343.0
+offset_top = -88.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Loading Screen/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 64
+text = "LOADING..."
+fit_content = true
+autowrap_mode = 0
 
 [connection signal="pressed" from="CanvasLayer/Gameplay UI/Gameplay/MarginContainer/HBoxContainer/Pause Button" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Main Menu/MarginContainer/VBoxContainer/Button Container/Start Button" to="." method="_on_start_button_pressed"]

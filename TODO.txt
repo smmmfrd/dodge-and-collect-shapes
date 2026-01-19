@@ -1,20 +1,22 @@
 TODO:
 
-Gameplay UI reqs:
-	Level Title
-	Collectables {Collected} / {Total}
-	See juice
+UI Theme.
 
-Complete level animation.
-
-Splash Screen.
+Background.
 
 ----- JUICE -----
-Player spawn feedback.
-
 Player death feedback.
+	Hit stop. Unplug pause button and use that code.
+	Shooting some particles out of the place the player died.
+
+Player spawn feedback. 
+	Shooting some particles that culminate in player spawn.
 
 Collectable pick up feedback.
+	Particles that hover in place for a little bit, like mario coin.
+
+Complete level animation.
+	Shoot particles out of the finish area.
 
 UI Feedback:
 	Better loading animation.
