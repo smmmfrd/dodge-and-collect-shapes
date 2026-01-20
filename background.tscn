@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4m3yql8xamjp"]
+
+[ext_resource type="Texture2D" uid="uid://bnwcogqahwsc4" path="res://Assets/Kenney/kenney_pattern-pack-2/Vector/Thin/pattern_0022.svg" id="1_oabld"]
+
+[node name="Background" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -4096
+offset_left = -536.0
+offset_top = -536.0
+offset_right = 590.4
+offset_bottom = 300.0
+mouse_filter = 2
+color = Color(0.031199997, 0.14255999, 0.24, 1)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+rotation = 0.122570984
+repeat_size = Vector2(130, 130)
+autoscroll = Vector2(4, 2)
+repeat_times = 9
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+modulate = Color(0.020799998, 0.09503999, 0.16, 1)
+texture_filter = 1
+texture = ExtResource("1_oabld")
