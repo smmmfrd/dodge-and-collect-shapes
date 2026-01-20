@@ -1,8 +1,5 @@
 TODO:
 
-Improve gameplay UI:
-	Collected needs to be separate rich texts.
-
 ----- JUICE -----
 Player death feedback.
 	Hit stop. Unplug pause button and use that code.
