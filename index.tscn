@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3urw428w3qyg"]
+[gd_scene load_steps=15 format=3 uid="uid://d3urw428w3qyg"]
 
 [ext_resource type="Script" uid="uid://dlim1mypb23q7" path="res://Levels/level_holder.gd" id="1_2gn6w"]
 [ext_resource type="Script" uid="uid://b0u6k84qvfjr6" path="res://game_manager.gd" id="1_ir7so"]
@@ -6,10 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://o254v1dnafw1" path="res://Levels/Level Scenes/level_1.tscn" id="2_mbj17"]
 [ext_resource type="Texture2D" uid="uid://dnc5qnbeql5u" path="res://Assets/Kenney/kenney_ui-pack/Vector/Red/button_square_depth_border.svg" id="4_3bfj3"]
 [ext_resource type="Texture2D" uid="uid://dy8cojxrfogvw" path="res://Assets/Kenney/kenney_ui-pack/Vector/Grey/button_square_depth_border.svg" id="5_2fy20"]
-[ext_resource type="Script" uid="uid://drk2wbcrl3vhq" path="res://gameplay_ui.gd" id="5_6cdi6"]
-[ext_resource type="PackedScene" uid="uid://d4m3yql8xamjp" path="res://background.tscn" id="5_dfxun"]
-[ext_resource type="Theme" uid="uid://b66i0jriub21v" path="res://UI_theme.tres" id="6_n7lv4"]
-[ext_resource type="Script" uid="uid://dir415ygs4x4p" path="res://loading_screen.gd" id="8_mvkpm"]
+[ext_resource type="Script" uid="uid://drk2wbcrl3vhq" path="res://UI/gameplay_ui.gd" id="5_6cdi6"]
+[ext_resource type="PackedScene" uid="uid://d4m3yql8xamjp" path="res://Levels/background.tscn" id="5_dfxun"]
+[ext_resource type="Theme" uid="uid://b66i0jriub21v" path="res://UI/UI_theme.tres" id="6_n7lv4"]
+[ext_resource type="Script" uid="uid://dir415ygs4x4p" path="res://UI/loading_screen.gd" id="8_mvkpm"]
+[ext_resource type="Script" uid="uid://c351qhv2snl1x" path="res://UI/green_tint_text.gd" id="9_n7lv4"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_u165g"]
+script = ExtResource("9_n7lv4")
+metadata/_custom_type_script = "uid://c351qhv2snl1x"
 
 [sub_resource type="Theme" id="Theme_fyqef"]
 
@@ -95,9 +100,11 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(48, 32)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
 text = " 0/2"
 horizontal_alignment = 2
 vertical_alignment = 1
+custom_effects = [SubResource("RichTextEffect_u165g")]
 
 [node name="UI" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
