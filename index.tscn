@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3urw428w3qyg"]
+[gd_scene load_steps=14 format=3 uid="uid://d3urw428w3qyg"]
 
 [ext_resource type="Script" uid="uid://dlim1mypb23q7" path="res://Levels/level_holder.gd" id="1_2gn6w"]
 [ext_resource type="Script" uid="uid://b0u6k84qvfjr6" path="res://game_manager.gd" id="1_ir7so"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://drk2wbcrl3vhq" path="res://gameplay_ui.gd" id="5_6cdi6"]
 [ext_resource type="PackedScene" uid="uid://d4m3yql8xamjp" path="res://background.tscn" id="5_dfxun"]
 [ext_resource type="Texture2D" uid="uid://cjl27toclqjwb" path="res://Assets/Kenney/kenney_game-icons/PNG/Black/1x/pause.png" id="6_2fy20"]
+[ext_resource type="Theme" uid="uid://b66i0jriub21v" path="res://UI_theme.tres" id="6_n7lv4"]
 [ext_resource type="Script" uid="uid://dir415ygs4x4p" path="res://loading_screen.gd" id="8_mvkpm"]
 
 [sub_resource type="Theme" id="Theme_fyqef"]
@@ -37,6 +38,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_n7lv4")
 script = ExtResource("5_6cdi6")
 
 [node name="Gameplay" type="PanelContainer" parent="CanvasLayer/Gameplay UI"]
@@ -103,6 +105,7 @@ offset_right = -2.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_n7lv4")
 
 [node name="Main Menu" type="PanelContainer" parent="CanvasLayer/UI"]
 unique_name_in_owner = true
@@ -226,6 +229,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_n7lv4")
 script = ExtResource("8_mvkpm")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Loading Screen"]

@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://b66i0jriub21v"]
+
+[ext_resource type="Texture2D" uid="uid://dnqeaws6pdjcs" path="res://Assets/Kenney/kenney_ui-pack/PNG/Green/Default/button_square_depth_gradient.png" id="1_6w50i"]
+[ext_resource type="Texture2D" uid="uid://c3mqrgomhbfts" path="res://Assets/Kenney/kenney_ui-pack/PNG/Green/Default/button_square_gloss.png" id="1_e1d5r"]
+[ext_resource type="Texture2D" uid="uid://d1q1drhot6rkf" path="res://Assets/Kenney/kenney_ui-pack/PNG/Green/Default/button_square_flat.png" id="2_fryvk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tw5cx"]
+texture = ExtResource("1_e1d5r")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fryvk"]
+texture = ExtResource("1_6w50i")
+texture_margin_left = 6.0
+texture_margin_top = 5.0
+texture_margin_right = 6.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e1d5r"]
+texture = ExtResource("2_fryvk")
+texture_margin_left = 7.0
+texture_margin_top = 5.0
+texture_margin_right = 6.0
+texture_margin_bottom = 5.0
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_tw5cx")
+Button/styles/normal = SubResource("StyleBoxTexture_fryvk")
+Button/styles/pressed = SubResource("StyleBoxTexture_e1d5r")

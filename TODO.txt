@@ -2,8 +2,6 @@ TODO:
 
 UI Theme.
 
-Background.
-
 ----- JUICE -----
 Player death feedback.
 	Hit stop. Unplug pause button and use that code.
