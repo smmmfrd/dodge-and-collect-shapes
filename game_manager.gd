@@ -50,8 +50,10 @@ func _on_close_button_pressed() -> void:
 	get_tree().quit()
 
 
-func _on_pause_button_pressed() -> void:
+func hit_stop() -> void:
 	#print("pausing")
+	LevelManager.toggle_paused()
+	await get_tree().create_timer(0.25).timeout
 	LevelManager.toggle_paused()
 
 func level_started(level_name: String, max_collects: int) -> void:

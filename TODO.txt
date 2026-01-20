@@ -1,6 +1,7 @@
 TODO:
 
-UI Theme.
+Improve gameplay UI:
+	Collected needs to be separate rich texts.
 
 ----- JUICE -----
 Player death feedback.

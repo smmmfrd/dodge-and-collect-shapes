@@ -102,12 +102,14 @@ func player_collided(player : Node2D) -> void:
 	if not player.is_in_group("Player"):
 		return
 	
-	print("Player hit something, starting them over.")
-	player.queue_free()
 	# Player death feedback.
+	await game_manager.hit_stop()
+	
+	# Kill player
+	player.queue_free()
 	
 	# Wait a bit...
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.25).timeout
 	
 	# Reset player position.
 	player_spawn.spawn_player()

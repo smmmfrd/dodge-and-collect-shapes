@@ -9,6 +9,9 @@ extends Node2D
 var heading_out := true
 
 func _process(delta: float) -> void:
+	if LevelManager.paused:
+		return
+	
 	go_to(delta, target_location.global_position if heading_out else self.global_position)
 
 func go_to(delta: float, location: Vector2) -> void:
