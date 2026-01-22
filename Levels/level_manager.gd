@@ -9,6 +9,9 @@ var player_spawn : PlayerSpawn = null
 var coll_count := 0
 var collected_count := 0
 
+signal incorrect_amount
+var first_incorrect = false
+
 func set_game_manager(manager: GameManager) -> void:
 	game_manager = manager
 
@@ -28,6 +31,11 @@ func set_player_spawn(spawn: PlayerSpawn) -> void:
 
 func finish_zone_entered() -> void:
 	if not level_completed():
+		# Included this control variable to spawning from triggering incorrect effect.
+		if !first_incorrect:
+			incorrect_amount.emit(collected_count, false)
+		else:
+			first_incorrect = false
 		return
 	
 	start_next_level()
@@ -56,7 +64,7 @@ func start_next_level() -> void:
 func begin_level(level_name: String) -> void:
 	# Let the UI update
 	await game_manager.level_started(level_name, coll_count)
-	
+	first_incorrect = true
 	#await get_tree().create_timer(0.5).timeout
 	
 	player_spawn.spawn_player()

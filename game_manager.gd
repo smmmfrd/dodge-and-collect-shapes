@@ -20,6 +20,7 @@ func _ready() -> void:
 	
 	# Half a second wait on boot for splash screen
 	await get_tree().create_timer(0.5).timeout
+	LevelManager.incorrect_amount.connect(gameplay_ui.incorrect_amount_collected)
 	
 	await _hide_loading_screen()
 

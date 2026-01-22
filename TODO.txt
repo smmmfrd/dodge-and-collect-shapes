@@ -18,7 +18,3 @@ UI Feedback:
 	Better loading animation.
 		Like a wipe or something...
 			https://youtu.be/Y7FfBWNwcHg?si=ETEuigOeRQ3xKFlf
-
-	Not enough pickups
-		Flash the collected count red and scale it maybe.
-			https://youtu.be/AVe2hjcQRRg?si=YRMl0ADwBrhxIony
