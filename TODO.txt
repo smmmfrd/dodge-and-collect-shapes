@@ -1,11 +1,14 @@
 TODO:
 
+Finished level feedback
+	Pop up a little text or something to show the player did something
+
+Fast Start
+	Make spacebar select yes
+
 ----- JUICE -----
 Player spawn feedback. 
 	Shooting some particles that culminate in player spawn.
 
 Collectable pick up feedback.
 	Particles that hover in place for a little bit, like mario coin.
-
-Complete level animation.
-	Shoot particles out of the finish area.

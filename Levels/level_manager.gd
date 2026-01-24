@@ -38,8 +38,10 @@ func finish_zone_entered(zone: Area2D) -> void:
 			first_incorrect = false
 		return
 	
-	zone.finished()
+	toggle_paused()
+	await zone.finished()
 	start_next_level()
+	toggle_paused()
 
 func start_next_level() -> void:
 	#print("Level is finished, transitioning to next.")
