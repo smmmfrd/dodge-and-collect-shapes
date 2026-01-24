@@ -55,9 +55,6 @@ func start_next_level() -> void:
 		game_manager.all_levels_completed()
 		return
 	
-	# Loading screen
-	await game_manager.next_level_pressed()
-	
 	# Load next level
 	level_holder.next_level()
 

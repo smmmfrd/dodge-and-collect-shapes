@@ -66,9 +66,6 @@ func level_started(level_name: String, max_collects: int) -> void:
 	await _hide_loading_screen()
 	pass
 
-func next_level_pressed() -> void:
-	await _show_loading_screen()
-
 func _show_loading_screen() -> void:
 	loading_screen.visible = true
 	await loading_screen.show_transition()
