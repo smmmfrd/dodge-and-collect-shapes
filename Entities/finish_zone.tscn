@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bygmdvgn6hvx3"]
+[gd_scene load_steps=4 format=3 uid="uid://bygmdvgn6hvx3"]
 
 [ext_resource type="PackedScene" uid="uid://beskof5wn247v" path="res://Assets/shape_sprite.tscn" id="1_jmh4b"]
 [ext_resource type="Script" uid="uid://bce6aymmxerlm" path="res://Entities/finish_zone.gd" id="1_qtehk"]
-[ext_resource type="PackedScene" uid="uid://2eq2v05mhbjy" path="res://Entities/shooting_particles.tscn" id="2_l1ohk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmh4b"]
 size = Vector2(16, 16)
@@ -11,7 +10,6 @@ size = Vector2(16, 16)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_qtehk")
-shooting_particles = ExtResource("2_l1ohk")
 
 [node name="Shape Sprites" parent="." instance=ExtResource("1_jmh4b")]
 modulate = Color(0, 0.3019608, 0.2509804, 1)

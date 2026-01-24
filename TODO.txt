@@ -3,9 +3,6 @@ TODO:
 Finished level feedback
 	Pop up a little text or something to show the player did something
 
-Fast Start
-	Make spacebar select yes
-
 ----- JUICE -----
 Player spawn feedback. 
 	Shooting some particles that culminate in player spawn.

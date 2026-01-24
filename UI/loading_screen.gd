@@ -4,11 +4,9 @@ extends Control
 @onready var transition_player: AnimationPlayer = $"ColorRect/Transition Player"
 
 func show_transition() -> void:
-	print("showing")
 	await play_animation("show")
 
 func hide_transition() -> void:
-	print("hiding")
 	await play_animation("hide")
 
 func play_animation(animation: String) -> void:
