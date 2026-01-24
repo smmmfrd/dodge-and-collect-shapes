@@ -40,8 +40,6 @@ func all_levels_completed() -> void:
 	open_menu(game_over)
 
 func _on_start_button_pressed() -> void:
-	await _show_loading_screen()
-	
 	open_menu()
 	LevelManager.start_new_game()
 
@@ -64,7 +62,6 @@ func level_started(level_name: String, max_collects: int) -> void:
 	gameplay_ui.level_stats(level_name, max_collects)
 	
 	await _hide_loading_screen()
-	pass
 
 func _show_loading_screen() -> void:
 	loading_screen.visible = true

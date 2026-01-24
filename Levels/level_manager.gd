@@ -29,7 +29,7 @@ func set_level_holder(holder: LevelHolder) -> void:
 func set_player_spawn(spawn: PlayerSpawn) -> void:
 	player_spawn = spawn
 
-func finish_zone_entered() -> void:
+func finish_zone_entered(zone: Area2D) -> void:
 	if not level_completed():
 		# Included this control variable to spawning from triggering incorrect effect.
 		if !first_incorrect:
@@ -38,6 +38,7 @@ func finish_zone_entered() -> void:
 			first_incorrect = false
 		return
 	
+	zone.finished()
 	start_next_level()
 
 func start_next_level() -> void:
@@ -54,6 +55,9 @@ func start_next_level() -> void:
 		#print("All levels completed.")
 		game_manager.all_levels_completed()
 		return
+	
+	# Put up loading screen.
+	await game_manager._show_loading_screen()
 	
 	# Load next level
 	level_holder.next_level()
