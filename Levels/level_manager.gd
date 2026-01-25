@@ -40,7 +40,8 @@ func finish_zone_entered() -> void:
 	
 	toggle_paused()
 	
-	# TODO: Place level finished event here.
+	# Level finished event here.
+	await game_manager.show_level_complete()
 	
 	start_next_level()
 	toggle_paused()

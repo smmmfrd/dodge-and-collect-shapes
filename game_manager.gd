@@ -8,6 +8,7 @@ extends Node
 
 @onready var gameplay_ui: GameplayUI = %"Gameplay UI"
 @onready var loading_screen: LoadingScreen = %"Loading Screen"
+@onready var level_complete: Control = %"Level Complete"
 
 func _ready() -> void:
 	# Introduce ourselves
@@ -15,6 +16,7 @@ func _ready() -> void:
 	
 	gameplay_ui.visible = false
 	loading_screen.visible = true
+	level_complete.visible = true
 	
 	open_menu(main_menu)
 	
@@ -68,8 +70,13 @@ func _show_loading_screen() -> void:
 	await loading_screen.show_transition()
 
 func _hide_loading_screen() -> void:
+	level_complete.visible = false
 	await loading_screen.hide_transition()
 	loading_screen.visible = false
 
 func update_collected_amount(amount: int, all_collected: bool) -> void:
 	gameplay_ui.collected_amount_update(amount, all_collected)
+
+func show_level_complete() -> void:
+	level_complete.visible = true
+	await level_complete.show_transition()
