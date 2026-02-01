@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://burlxeu4mddvh"]
+
+[ext_resource type="Script" uid="uid://dsjkk8qpxhp2s" path="res://Damage/spinning_damage.gd" id="1_wbkxo"]
+[ext_resource type="PackedScene" uid="uid://lxcrdbrvvvev" path="res://Damage/moving_damage.tscn" id="2_10nrh"]
+[ext_resource type="Script" uid="uid://di3n5c6jm2f28" path="res://Damage/spinning_debug.gd" id="3_10nrh"]
+
+[node name="Spinning Damage" type="Node2D"]
+script = ExtResource("1_wbkxo")
+damage_prefab = ExtResource("2_10nrh")
+
+[node name="Moving Damage" parent="." instance=ExtResource("2_10nrh")]
+
+[node name="Display Tool" type="Node2D" parent="." node_paths=PackedStringArray("that_guy")]
+script = ExtResource("3_10nrh")
+that_guy = NodePath("..")

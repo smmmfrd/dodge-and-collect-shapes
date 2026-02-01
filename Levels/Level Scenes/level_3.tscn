@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bygmdvgn6hvx3" path="res://Entities/finish_zone.tscn" id="5_ck3gp"]
 [ext_resource type="PackedScene" uid="uid://bkhfva50dbdew" path="res://Damage/boomerang_damage.tscn" id="6_s8wmb"]
 
-[node name="Base Level" type="Node2D"]
+[node name="Level 3" type="Node2D"]
 script = ExtResource("1_padch")
 
 [node name="Player Spawn" parent="." instance=ExtResource("2_uwxw1")]
