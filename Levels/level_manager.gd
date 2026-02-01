@@ -99,8 +99,6 @@ func collectable_collected() -> void:
 	
 	if all_collected:
 		return
-	
-	print("All collectables collected.")
 
 
 func level_completed() -> bool:

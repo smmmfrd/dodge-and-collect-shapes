@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dlim1mypb23q7" path="res://Levels/level_holder.gd" id="1_2gn6w"]
 [ext_resource type="Script" uid="uid://b0u6k84qvfjr6" path="res://game_manager.gd" id="1_ir7so"]
 [ext_resource type="Texture2D" uid="uid://dnc5qnbeql5u" path="res://Assets/Kenney/kenney_ui-pack/Vector/Red/button_square_depth_border.svg" id="4_3bfj3"]
-[ext_resource type="PackedScene" uid="uid://d4mi4ter561gn" path="res://Levels/Level Scenes/level_3.tscn" id="4_t1fqd"]
+[ext_resource type="PackedScene" uid="uid://cc54thbm8cmwv" path="res://Levels/Level Scenes/level_5.tscn" id="4_t1fqd"]
 [ext_resource type="Script" uid="uid://drk2wbcrl3vhq" path="res://UI/gameplay_ui.gd" id="5_6cdi6"]
 [ext_resource type="PackedScene" uid="uid://d4m3yql8xamjp" path="res://Levels/background.tscn" id="5_dfxun"]
 [ext_resource type="Theme" uid="uid://b66i0jriub21v" path="res://UI/UI_theme.tres" id="6_n7lv4"]
