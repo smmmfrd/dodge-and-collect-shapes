@@ -17,12 +17,11 @@ func _ready() -> void:
 	gameplay_ui.visible = false
 	loading_screen.visible = true
 	
-	open_menu(main_menu)
-	
 	# Half a second wait on boot for splash screen
 	await get_tree().create_timer(0.5).timeout
 	LevelManager.incorrect_amount.connect(gameplay_ui.incorrect_amount_collected)
 	
+	open_menu(main_menu)
 	await _hide_loading_screen()
 
 func open_menu(menu : Control = null) -> void:
@@ -41,6 +40,10 @@ func all_levels_completed() -> void:
 	open_menu(game_over)
 
 func _on_start_button_pressed() -> void:
+	if loading_screen.transition_player.is_playing():
+		print("hey wait")
+		return
+	
 	open_menu()
 	LevelManager.start_new_game()
 
