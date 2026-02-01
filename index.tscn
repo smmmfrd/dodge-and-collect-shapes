@@ -1,57 +1,22 @@
-[gd_scene load_steps=24 format=3 uid="uid://d3urw428w3qyg"]
+[gd_scene load_steps=28 format=3 uid="uid://d3urw428w3qyg"]
 
 [ext_resource type="Script" uid="uid://dlim1mypb23q7" path="res://Levels/level_holder.gd" id="1_2gn6w"]
 [ext_resource type="Script" uid="uid://b0u6k84qvfjr6" path="res://game_manager.gd" id="1_ir7so"]
 [ext_resource type="Texture2D" uid="uid://dnc5qnbeql5u" path="res://Assets/Kenney/kenney_ui-pack/Vector/Red/button_square_depth_border.svg" id="4_3bfj3"]
-[ext_resource type="PackedScene" uid="uid://cc54thbm8cmwv" path="res://Levels/Level Scenes/level_5.tscn" id="4_t1fqd"]
+[ext_resource type="PackedScene" uid="uid://cc54thbm8cmwv" path="res://Levels/Level Scenes/level_stealth.tscn" id="4_t1fqd"]
+[ext_resource type="PackedScene" uid="uid://o254v1dnafw1" path="res://Levels/Level Scenes/level_no_move.tscn" id="4_u8god"]
 [ext_resource type="Script" uid="uid://drk2wbcrl3vhq" path="res://UI/gameplay_ui.gd" id="5_6cdi6"]
 [ext_resource type="PackedScene" uid="uid://d4m3yql8xamjp" path="res://Levels/background.tscn" id="5_dfxun"]
+[ext_resource type="PackedScene" uid="uid://djbf0kby34a8k" path="res://Levels/Level Scenes/level_pinwheels.tscn" id="5_inspy"]
+[ext_resource type="PackedScene" uid="uid://d4mi4ter561gn" path="res://Levels/Level Scenes/level_safe_zone.tscn" id="6_24g3f"]
 [ext_resource type="Theme" uid="uid://b66i0jriub21v" path="res://UI/UI_theme.tres" id="6_n7lv4"]
+[ext_resource type="PackedScene" uid="uid://doecjw10xo06f" path="res://Levels/Level Scenes/level_some_move.tscn" id="7_qcvgp"]
 [ext_resource type="Script" uid="uid://dir415ygs4x4p" path="res://UI/loading_screen.gd" id="8_mvkpm"]
 [ext_resource type="Texture2D" uid="uid://s0c0k3hiqqh6" path="res://Assets/Kenney/kenney_ui-pack/PNG/Grey/Default/button_square_gradient.png" id="9_t1fqd"]
 [ext_resource type="Script" uid="uid://daencwc45k2nf" path="res://UI/main_menu.gd" id="9_u165g"]
 [ext_resource type="Shader" uid="uid://py68334wj5x5" path="res://Assets/cashew-olddew/transition.gdshader" id="10_n7lv4"]
 [ext_resource type="Script" uid="uid://bvd34eteyssid" path="res://UI/level_complete.gd" id="13_eheuu"]
 [ext_resource type="Texture2D" uid="uid://7exlgdwibkc5" path="res://Assets/Kenney/kenney_ui-pack/Vector/Red/button_square_border.svg" id="13_t1fqd"]
-
-[sub_resource type="Animation" id="Animation_eheuu"]
-resource_name = "show"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(4.4703484e-08, 0.36666667),
-"transitions": PackedFloat32Array(1, 2),
-"update": 0,
-"values": [Vector2(0.5, 0.5), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:offset_left")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.36666667),
-"transitions": PackedFloat32Array(1, 0.5),
-"update": 0,
-"values": [384.0, -128.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:offset_right")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.36666667),
-"transitions": PackedFloat32Array(1, 0.5),
-"update": 0,
-"values": [640.0, 128.0]
-}
 
 [sub_resource type="Animation" id="Animation_o6jxw"]
 length = 0.001
@@ -90,6 +55,45 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [128.0]
+}
+
+[sub_resource type="Animation" id="Animation_eheuu"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.4703484e-08, 0.36666667),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [384.0, -128.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [640.0, 128.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lcafn"]
@@ -224,7 +228,7 @@ unique_name_in_owner = true
 
 [node name="Level Holder" type="Node2D" parent="."]
 script = ExtResource("1_2gn6w")
-levels = Array[PackedScene]([ExtResource("4_t1fqd")])
+levels = Array[PackedScene]([ExtResource("4_u8god"), ExtResource("7_qcvgp"), ExtResource("4_t1fqd"), ExtResource("5_inspy"), ExtResource("6_24g3f")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

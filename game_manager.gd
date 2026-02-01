@@ -41,7 +41,6 @@ func all_levels_completed() -> void:
 
 func _on_start_button_pressed() -> void:
 	if loading_screen.transition_player.is_playing():
-		print("hey wait")
 		return
 	
 	open_menu()

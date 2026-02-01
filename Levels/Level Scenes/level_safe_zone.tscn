@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bygmdvgn6hvx3" path="res://Entities/finish_zone.tscn" id="5_ck3gp"]
 [ext_resource type="PackedScene" uid="uid://bkhfva50dbdew" path="res://Damage/boomerang_damage.tscn" id="6_s8wmb"]
 
-[node name="Level 3" type="Node2D"]
+[node name="Take The Breaks" type="Node2D"]
 script = ExtResource("1_padch")
 
 [node name="Player Spawn" parent="." instance=ExtResource("2_uwxw1")]
@@ -23,34 +23,47 @@ position = Vector2(-128, -48)
 position = Vector2(128, 48)
 
 [node name="Finish Zone" parent="." instance=ExtResource("5_ck3gp")]
-position = Vector2(216, 0)
-scale = Vector2(3, 4)
-
-[node name="Boomerang Damage" parent="." instance=ExtResource("6_s8wmb")]
-position = Vector2(168, -16)
-
-[node name="Target" parent="Boomerang Damage" index="1"]
-position = Vector2(-144, 0)
-
-[node name="Boomerang Damage2" parent="." instance=ExtResource("6_s8wmb")]
-position = Vector2(168, 16)
-
-[node name="Target" parent="Boomerang Damage2" index="1"]
-position = Vector2(-144, 0)
+position = Vector2(224, 0)
+scale = Vector2(2, 4)
 
 [node name="Boomerang Damage3" parent="." instance=ExtResource("6_s8wmb")]
-position = Vector2(-24, -16)
+position = Vector2(0, -24)
 
 [node name="Target" parent="Boomerang Damage3" index="1"]
-position = Vector2(-144, 0)
+position = Vector2(-192, 0)
 
 [node name="Boomerang Damage4" parent="." instance=ExtResource("6_s8wmb")]
-position = Vector2(-24, 16)
+position = Vector2(0, 24)
 
 [node name="Target" parent="Boomerang Damage4" index="1"]
-position = Vector2(-144, 0)
+position = Vector2(-192, 0)
 
-[editable path="Boomerang Damage"]
-[editable path="Boomerang Damage2"]
+[node name="Boomerang Damage5" parent="." instance=ExtResource("6_s8wmb")]
+
+[node name="Target" parent="Boomerang Damage5" index="1"]
+position = Vector2(-192, 0)
+
+[node name="Boomerang Damage6" parent="." instance=ExtResource("6_s8wmb")]
+position = Vector2(192, -24)
+
+[node name="Target" parent="Boomerang Damage6" index="1"]
+position = Vector2(-192, 0)
+
+[node name="Boomerang Damage7" parent="." instance=ExtResource("6_s8wmb")]
+position = Vector2(192, 24)
+
+[node name="Target" parent="Boomerang Damage7" index="1"]
+position = Vector2(-192, 0)
+
+[node name="Boomerang Damage8" parent="." instance=ExtResource("6_s8wmb")]
+position = Vector2(192, 0)
+
+[node name="Target" parent="Boomerang Damage8" index="1"]
+position = Vector2(-192, 0)
+
 [editable path="Boomerang Damage3"]
 [editable path="Boomerang Damage4"]
+[editable path="Boomerang Damage5"]
+[editable path="Boomerang Damage6"]
+[editable path="Boomerang Damage7"]
+[editable path="Boomerang Damage8"]

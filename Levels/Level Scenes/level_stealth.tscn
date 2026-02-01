@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bygmdvgn6hvx3" path="res://Entities/finish_zone.tscn" id="5_xagau"]
 [ext_resource type="PackedScene" uid="uid://rqyi2nhlug76" path="res://Damage/patrolling_damage.tscn" id="6_w8off"]
 
-[node name="Level 5" type="Node2D"]
+[node name="Find the pattern" type="Node2D"]
 script = ExtResource("1_ki7po")
 
 [node name="Player Spawn" parent="." instance=ExtResource("2_321yd")]

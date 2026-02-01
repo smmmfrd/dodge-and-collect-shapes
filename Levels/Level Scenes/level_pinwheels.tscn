@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bygmdvgn6hvx3" path="res://Entities/finish_zone.tscn" id="5_ben3k"]
 [ext_resource type="PackedScene" uid="uid://burlxeu4mddvh" path="res://Damage/spinning_damage.tscn" id="6_nkqp2"]
 
-[node name="Level 4" type="Node2D"]
+[node name="Slow Down" type="Node2D"]
 script = ExtResource("1_ujo87")
 
 [node name="Player Spawn" parent="." instance=ExtResource("2_hvgxt")]
