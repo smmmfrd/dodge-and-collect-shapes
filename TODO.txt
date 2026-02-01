@@ -7,8 +7,8 @@ Polish graphics
 
 3 MORE LEVELS
 
-1. Safe Spots within kill zone. 2.3/50
+1. DONE. LEVEL 3 = Safe Spots within kill zone. 2.3/50
 
-2. Spinning damage areas with collects in middle. 4/30
+2. DONE. LEVEL 4 = Spinning damage areas with collects in middle. 4/30
 
 3. Stealth Mission one, where you have to go inbetween rotations of damage areas. Probably just them doing paths around rectangles. 1. 8/30

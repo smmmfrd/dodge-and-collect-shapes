@@ -112,10 +112,12 @@ func clear_level_data() -> void:
 
 #region Reset Level
 
+var player_dead = false
 func player_collided(player : Node2D) -> void:
-	if not player.is_in_group("Player"):
+	if not player.is_in_group("Player") || player_dead:
 		return
 	
+	player_dead = true
 	# Player death feedback.
 	await game_manager.hit_stop()
 	
@@ -126,6 +128,7 @@ func player_collided(player : Node2D) -> void:
 	await get_tree().create_timer(0.25).timeout
 	
 	# Reset player position.
+	player_dead = false
 	player_spawn.spawn_player()
 
 #endregion

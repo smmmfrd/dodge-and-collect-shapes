@@ -14,13 +14,12 @@ mouse_filter = 2
 color = Color(0.031199997, 0.14255999, 0.24, 1)
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-rotation = 0.122570984
 repeat_size = Vector2(130, 130)
-autoscroll = Vector2(4, 2)
-repeat_times = 9
-ignore_camera_scroll = true
+autoscroll = Vector2(4, 3)
+repeat_times = 24
+follow_viewport = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 modulate = Color(0.020799998, 0.09503999, 0.16, 1)
-texture_filter = 1
+texture_filter = 2
 texture = ExtResource("1_oabld")
