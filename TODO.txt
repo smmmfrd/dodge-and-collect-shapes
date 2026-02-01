@@ -1,0 +1,14 @@
+Improve player movement in 1x1 areas.
+
+Remove starting finish zones, unnecessary.
+
+Polish graphics
+	Levels need to be bigger to accomodate screen size, at least.
+
+3 MORE LEVELS
+
+1. Safe Spots within kill zone. 2.3/50
+
+2. Spinning damage areas with collects in middle. 4/30
+
+3. Stealth Mission one, where you have to go inbetween rotations of damage areas. Probably just them doing paths around rectangles. 1. 8/30

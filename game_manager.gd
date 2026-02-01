@@ -16,7 +16,6 @@ func _ready() -> void:
 	
 	gameplay_ui.visible = false
 	loading_screen.visible = true
-	level_complete.visible = true
 	
 	open_menu(main_menu)
 	

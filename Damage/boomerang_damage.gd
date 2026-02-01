@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var SPEED := 1
+@export var SPEED := 100
 
 @export var damage_area : Area2D
 

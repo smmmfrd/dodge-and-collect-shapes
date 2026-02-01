@@ -1,15 +1,14 @@
-[gd_scene load_steps=25 format=3 uid="uid://d3urw428w3qyg"]
+[gd_scene load_steps=24 format=3 uid="uid://d3urw428w3qyg"]
 
 [ext_resource type="Script" uid="uid://dlim1mypb23q7" path="res://Levels/level_holder.gd" id="1_2gn6w"]
 [ext_resource type="Script" uid="uid://b0u6k84qvfjr6" path="res://game_manager.gd" id="1_ir7so"]
-[ext_resource type="PackedScene" uid="uid://doecjw10xo06f" path="res://Levels/Level Scenes/level_2.tscn" id="2_2gn6w"]
-[ext_resource type="PackedScene" uid="uid://o254v1dnafw1" path="res://Levels/Level Scenes/level_1.tscn" id="2_mbj17"]
 [ext_resource type="Texture2D" uid="uid://dnc5qnbeql5u" path="res://Assets/Kenney/kenney_ui-pack/Vector/Red/button_square_depth_border.svg" id="4_3bfj3"]
-[ext_resource type="Texture2D" uid="uid://dy8cojxrfogvw" path="res://Assets/Kenney/kenney_ui-pack/Vector/Grey/button_square_depth_border.svg" id="5_2fy20"]
+[ext_resource type="PackedScene" uid="uid://d4mi4ter561gn" path="res://Levels/Level Scenes/level_3.tscn" id="4_t1fqd"]
 [ext_resource type="Script" uid="uid://drk2wbcrl3vhq" path="res://UI/gameplay_ui.gd" id="5_6cdi6"]
 [ext_resource type="PackedScene" uid="uid://d4m3yql8xamjp" path="res://Levels/background.tscn" id="5_dfxun"]
 [ext_resource type="Theme" uid="uid://b66i0jriub21v" path="res://UI/UI_theme.tres" id="6_n7lv4"]
 [ext_resource type="Script" uid="uid://dir415ygs4x4p" path="res://UI/loading_screen.gd" id="8_mvkpm"]
+[ext_resource type="Texture2D" uid="uid://s0c0k3hiqqh6" path="res://Assets/Kenney/kenney_ui-pack/PNG/Grey/Default/button_square_gradient.png" id="9_t1fqd"]
 [ext_resource type="Script" uid="uid://daencwc45k2nf" path="res://UI/main_menu.gd" id="9_u165g"]
 [ext_resource type="Shader" uid="uid://py68334wj5x5" path="res://Assets/cashew-olddew/transition.gdshader" id="10_n7lv4"]
 [ext_resource type="Script" uid="uid://bvd34eteyssid" path="res://UI/level_complete.gd" id="13_eheuu"]
@@ -225,12 +224,13 @@ unique_name_in_owner = true
 
 [node name="Level Holder" type="Node2D" parent="."]
 script = ExtResource("1_2gn6w")
-levels = Array[PackedScene]([ExtResource("2_mbj17"), ExtResource("2_2gn6w")])
+levels = Array[PackedScene]([ExtResource("4_t1fqd")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Level Complete" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -288,7 +288,6 @@ libraries = {
 
 [node name="Gameplay UI" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -299,59 +298,67 @@ theme = ExtResource("6_n7lv4")
 script = ExtResource("5_6cdi6")
 
 [node name="Gameplay" type="PanelContainer" parent="CanvasLayer/Gameplay UI"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -25.0
-offset_right = 25.0
+anchors_preset = 10
+anchor_right = 1.0
 offset_bottom = 50.0
 grow_horizontal = 2
 
-[node name="BackGround" type="NinePatchRect" parent="CanvasLayer/Gameplay UI/Gameplay"]
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Gameplay UI/Gameplay"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 4
+
+[node name="BackGround" type="NinePatchRect" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer2"]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("5_2fy20")
+texture = ExtResource("9_t1fqd")
 region_rect = Rect2(0, 0, 64, 64)
 patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 12
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Gameplay UI/Gameplay"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer2/MarginContainer"]
 layout_mode = 2
 
-[node name="Level Name Text" type="RichTextLabel" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer/HBoxContainer"]
+[node name="Level Name Text" type="RichTextLabel" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer2/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 32)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.26, 0.031200001, 0.11509336, 1)
 theme_override_font_sizes/normal_font_size = 16
 text = "Level Name"
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer2/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Collected Text" type="RichTextLabel" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer/HBoxContainer/HBoxContainer"]
+[node name="Collected Text" type="RichTextLabel" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer2/MarginContainer/HBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 32)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.26, 0.031200001, 0.11509336, 1)
 theme_override_font_sizes/normal_font_size = 16
 text = "Collected:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Amount Text" type="RichTextLabel" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer/HBoxContainer/HBoxContainer"]
+[node name="Amount Text" type="RichTextLabel" parent="CanvasLayer/Gameplay UI/Gameplay/MarginContainer2/MarginContainer/HBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(48, 32)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.26, 0.031200001, 0.11509336, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = " 0/2"
