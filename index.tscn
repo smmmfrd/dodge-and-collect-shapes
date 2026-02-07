@@ -448,6 +448,7 @@ text = "(SPACE)"
 horizontal_alignment = 1
 
 [node name="Close Button" type="Button" parent="CanvasLayer/UI/Main Menu/MarginContainer/VBoxContainer/Button Container"]
+visible = false
 layout_mode = 2
 text = "Exit"
 
@@ -506,6 +507,7 @@ theme = SubResource("Theme_m6e0p")
 text = "New Game"
 
 [node name="Close Button" type="Button" parent="CanvasLayer/UI/Game Over/MarginContainer/VBoxContainer/Button Container"]
+visible = false
 layout_mode = 2
 text = "Exit"
 
